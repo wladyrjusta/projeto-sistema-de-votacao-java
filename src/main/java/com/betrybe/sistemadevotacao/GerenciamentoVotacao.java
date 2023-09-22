@@ -43,10 +43,10 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     for (PessoaCandidata pessoaCandidata : pessoasCandidatas) {
       if (pessoaCandidata.getNumero() == numeroPessoaCandidata) {
         pessoaCandidata.receberVoto();
+        cpfsComputados.add(cpfPessoaEleitora);
         break;
       }
     }
-    cpfsComputados.add(cpfPessoaEleitora);
   }
 
   @Override
@@ -59,18 +59,15 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       totalVotos += pessoaCandidata.getVotos();
     }
     for (PessoaCandidata pessoaCandidata : pessoasCandidatas) {
-      try {
-        int votosCandidato = pessoaCandidata.getVotos();
-        int porcentagemPorCandidato = (votosCandidato / totalVotos) * 100;
-        System.out.println(
-            "Nome: "
-                + pessoaCandidata.getNome() + " - "
-                + pessoaCandidata.getVotos() + " votos "
-                + "( " + porcentagemPorCandidato + "%" + " )"
-        );
-      } finally {
-        System.out.println("Total de votos: " + totalVotos);
-      }
+      int votosCandidato = pessoaCandidata.getVotos();
+      double porcentagemPorCandidato = (votosCandidato * 100.0) / totalVotos;
+      System.out.println(
+          "Nome: "
+              + pessoaCandidata.getNome() + " - "
+              + pessoaCandidata.getVotos() + " votos "
+              + "( " + Math.round(porcentagemPorCandidato) + "%" + " )"
+      );
     }
+    System.out.println("Total de votos: " + totalVotos);
   }
 }
