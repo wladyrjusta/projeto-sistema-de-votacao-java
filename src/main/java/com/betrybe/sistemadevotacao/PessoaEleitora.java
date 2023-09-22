@@ -1,8 +1,18 @@
 package com.betrybe.sistemadevotacao;
 
+/**
+ * Classe que representa uma pessoa eleitora em um sistema de votação.
+ * Extende a classe Pessoa.
+ */
 public class PessoaEleitora extends Pessoa {
   private String cpf;
 
+  /**
+   * Construtor da classe PessoaCandidata.
+   *
+   * @param nome   O nome da candidata.
+   * @param cpf O número da candidata.
+   */
   public PessoaEleitora(String nome, String cpf) {
     this.cpf = cpf;
     this.nome = nome;
