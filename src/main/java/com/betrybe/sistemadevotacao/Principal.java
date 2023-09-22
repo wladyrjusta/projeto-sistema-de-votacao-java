@@ -2,18 +2,27 @@ package com.betrybe.sistemadevotacao;
 
 import java.util.Scanner;
 
+/**
+ * Classe Principal do Sistema de Votação.
+ */
 public class Principal {
   private static GerenciamentoVotacao gerenciamentoVotacao = new GerenciamentoVotacao();
   private static Scanner scanner = new Scanner(System.in);
 
+  /**
+   * O método principal que inicia o programa.
+   *
+   * @param args Os argumentos de linha de comando (não utilizados).
+   */
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
     cadastrarPessoaCandidata();
     cadastrarPessoaEleitora();
     votacao();
-
   }
 
+  /**
+   * Permite o cadastro de pessoas candidatas.
+   */
   public static void cadastrarPessoaCandidata() {
     System.out.println(
         "Cadastrar pessoa candidata?\n"
@@ -38,6 +47,9 @@ public class Principal {
     }
   }
 
+  /**
+   * Permite o cadastro de pessoas eleitoras.
+   */
   public static void cadastrarPessoaEleitora() {
     System.out.println(
         "Cadastrar pessoa eleitora?\n"
@@ -62,6 +74,9 @@ public class Principal {
     }
   }
 
+  /**
+   * Inicia o processo de votação.
+   */
   public static void votacao() {
     String prosseguirVotacao;
     do {
@@ -95,6 +110,4 @@ public class Principal {
     gerenciamentoVotacao.mostrarResultado(); // Mostra o resultado final após finalizar a votação
     scanner.close();
   }
-
 }
-
