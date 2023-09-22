@@ -1,5 +1,8 @@
 package com.betrybe.sistemadevotacao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public interface GerenciamentoVotacaoInterface {
 
   void cadastrarPessoaCandidata(String nome, int numero);
